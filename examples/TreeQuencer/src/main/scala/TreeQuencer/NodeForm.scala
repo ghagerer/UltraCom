@@ -43,7 +43,7 @@ class NodeForm(val file: File) extends MTComponent(app) {
   val rotationY = new VarA[Float](0f)
   val rotationZ = new VarA[Float](0f)
 
-  setLight(app.light)
+  //setLight(app.light)
 
   // Set up a material to react to the light
   val material = FileImporter.cacheGLMaterial(new File(file.getAbsolutePath.replace(".obj", "_material.scala")))

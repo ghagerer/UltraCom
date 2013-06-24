@@ -3,7 +3,7 @@ package main.scala.TreeQuencer
 import org.mt4j.{MTApplication, Scene, Application}
 import org.mt4j.util.math.Vector3D
 import org.mt4j.components.MTLight
-import javax.media.opengl.GL
+import javax.media.opengl.{GL2, GL}
 import org.mt4j.output.audio.AudioServer
 import org.mt4j.util.MTColor
 import java.awt.event.KeyEvent
@@ -65,21 +65,21 @@ object app extends Application {
    * Quit application, when pressing escape on keyboard
    * @param e The key event
    */
-  override protected def handleKeyEvent(e: KeyEvent) {
+/*  override protected def handleKeyEvent(e: KeyEvent) {
     if (keyPressed && keyCode == VK_ESCAPE) {
       AudioServer.quit // quit supercollider server scsynth
       Runtime.getRuntime.halt(0) // quit java runtime environment
     }
     super.handleKeyEvent(e)
   }
-
+ */
 }
 
 class NodeScene() extends Scene(app,"TreeQuencer") {
   AudioServer.start(true)
   app.scene = this
   app.scene.setClearColor(new MTColor(255,255,255))
-  app.light = new MTLight(app, GL.GL_LIGHT3, new Vector3D(0,0,200))//app.center.getAdded(app.scene.getSceneCam.getPosition))
+  //app.light = new MTLight(app new Vector3D(0,0,200))//app.center.getAdded(app.scene.getSceneCam.getPosition))
   MTLight.enableLightningAndAmbient(app, 150, 150, 150, 255)
   showTracer(show = true)
 
