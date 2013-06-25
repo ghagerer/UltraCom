@@ -63,6 +63,10 @@ SynthDef("Wobble2") {
 
 	val sig = SplayAz.ar(2, Pan2.ar( volume * base * amp * env))
 
+
+
+
+
 	AudioServer.attach(sig)
 
 }
